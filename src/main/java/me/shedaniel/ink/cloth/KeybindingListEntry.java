@@ -55,7 +55,7 @@ public class KeybindingListEntry extends AbstractListListEntry<KeyFunction, Keyb
             keyFunction = Optional.ofNullable(keyFunction).orElse(new KeyFunctionImpl()).copy();
             this.ogFunction = keyFunction.copy();
             this.keyFunction = keyFunction;
-            widget = new AbstractPressableButtonWidget(0, 0, 100, 20, Text.method_30163("")) {
+            widget = new AbstractPressableButtonWidget(0, 0, 100, 20, Text.of("")) {
                 @Override
                 public void onPress() {
                     Screen screen = MinecraftClient.getInstance().currentScreen;

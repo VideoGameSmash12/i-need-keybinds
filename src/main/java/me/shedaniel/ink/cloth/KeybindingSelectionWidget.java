@@ -107,7 +107,7 @@ public class KeybindingSelectionWidget extends DynamicElementListWidget<Keybindi
             this.widget = new ButtonWidget(0, 0, i, 20, new TranslatableText("text.ink.select"), var1 -> {
                 consumer.accept(Optional.ofNullable(new KeyFunctionImpl("cmd:" + textField.getText())));
             });
-            this.textField = new TextFieldWidget(MinecraftClient.getInstance().textRenderer, 0, 0, 150 - i - 10, 16, Text.method_30163(""));
+            this.textField = new TextFieldWidget(MinecraftClient.getInstance().textRenderer, 0, 0, 150 - i - 10, 16, Text.of(""));
             this.textField.setMaxLength(1000000);
             this.textField.setText(s);
         }
