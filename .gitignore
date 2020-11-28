@@ -24,3 +24,4 @@ bin/
 
 run/
 /local.properties
+logs/latest.log

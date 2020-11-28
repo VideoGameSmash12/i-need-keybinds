@@ -66,7 +66,7 @@ public class KeybindingSelectionScreen extends Screen {
                 string_1 = string_2;
                 widget.addEntry(new KeybindingSelectionWidget.CategoryEntry(string_2));
             }
-            int int_1 = client.textRenderer.getStringWidth(I18n.translate(keyBinding_1.getId()));
+            int int_1 = client.textRenderer.getWidth(I18n.translate(keyBinding_1.getTranslationKey()));
             if (int_1 > entryWidth.get())
                 entryWidth.set(int_1);
             widget.addEntry(new KeybindingSelectionWidget.KeyBindingEntry(consumer, keyBinding_1, entryWidth));

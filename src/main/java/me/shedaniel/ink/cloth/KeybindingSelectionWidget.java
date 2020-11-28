@@ -61,7 +61,7 @@ public class KeybindingSelectionWidget extends DynamicElementListWidget<Keybindi
         @Override
         public void render(MatrixStack matrices, int index, int y, int x, int entryWidth, int entryHeight, int mouseX, int mouseY, boolean isSelected, float delta) {
             TextRenderer font = MinecraftClient.getInstance().textRenderer;
-            font.draw(matrices, text, x + entryWidth / 2 - font.getStringWidth(text) / 2, y, 16777215);
+            font.draw(matrices, text, x + entryWidth / 2 - font.getWidth(text) / 2, y, 16777215);
         }
         
         @Override
@@ -86,7 +86,7 @@ public class KeybindingSelectionWidget extends DynamicElementListWidget<Keybindi
         @Override
         public void render(MatrixStack matrices, int index, int y, int x, int entryWidth, int entryHeight, int mouseX, int mouseY, boolean isSelected, float delta) {
             TextRenderer font = MinecraftClient.getInstance().textRenderer;
-            font.draw(matrices, I18n.translate(keyBinding_1.getId()), x, y, 16777215);
+            font.draw(matrices, I18n.translate(keyBinding_1.getTranslationKey()), x, y, 16777215);
             widget.y = y - 5;
             widget.x = x + entryWidth - widget.getWidth();
             widget.render(matrices, mouseX, mouseY, delta);
@@ -103,7 +103,7 @@ public class KeybindingSelectionWidget extends DynamicElementListWidget<Keybindi
         private AbstractButtonWidget widget;
         
         public CommandEntry(Consumer<Optional<KeyFunction>> consumer, String s) {
-            int i = MinecraftClient.getInstance().textRenderer.getStringWidth(I18n.translate("text.ink.select")) + 8;
+            int i = MinecraftClient.getInstance().textRenderer.getWidth(I18n.translate("text.ink.select")) + 8;
             this.widget = new ButtonWidget(0, 0, i, 20, new TranslatableText("text.ink.select"), var1 -> {
                 consumer.accept(Optional.ofNullable(new KeyFunctionImpl("cmd:" + textField.getText())));
             });

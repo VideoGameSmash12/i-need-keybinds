@@ -23,7 +23,7 @@ public class KeyFunctionImpl implements KeyFunction {
     }
     
     public KeyFunctionImpl(KeyBinding keyBinding) {
-        this.keyBinding = keyBinding.getId();
+        this.keyBinding = keyBinding.getTranslationKey();
     }
     
     @Override
@@ -48,7 +48,7 @@ public class KeyFunctionImpl implements KeyFunction {
     
     @Override
     public String getFormattedName() {
-        return isNull() ? "Not Set" : hasCommand() ? "Command: " + getCommand() : I18n.translate(getKeybind().getId());
+        return isNull() ? "Not Set" : hasCommand() ? "Command: " + getCommand() : I18n.translate(getKeybind().getTranslationKey());
     }
     
     @Override

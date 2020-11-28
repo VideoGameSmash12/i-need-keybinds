@@ -29,7 +29,7 @@ public class TitleWidget extends Widget {
         if (INeedKeybinds.hudState == hudState || (INeedKeybinds.hudState == HudState.HIDDEN && lastState == hudState)) {
             Rectangle bounds = getBounds();
             String s = "Select Category";
-            textRenderer.drawWithShadow(matrices, s, bounds.x + bounds.width / 2 - textRenderer.getStringWidth(s) / 2, bounds.y + 4, 16777215);
+            textRenderer.drawWithShadow(matrices, s, bounds.x + bounds.width / 2 - textRenderer.getWidth(s) / 2, bounds.y + 4, 16777215);
         }
     }
     

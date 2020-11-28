@@ -22,9 +22,7 @@ public class ClothConfigCombat {
         ConfigBuilder builder = ConfigBuilder.create().setTitle(new TranslatableText("config.i-need-keybinds.title")).setParentScreen(screen);
         ConfigEntryBuilder eb = builder.entryBuilder();
         ConfigCategory general = builder.getOrCreateCategory(new TranslatableText("config.category.general"));
-        general.addEntry(eb.startIntSlider(new TranslatableText("config.field.animationTicks"), (int) configObject.animate, 0, 5000).setTextGetter(integer -> {
-            return Text.of(integer <= 0 ? "Value: Disabled" : (integer > 1500 ? String.format("Value: %.1fs", integer / 1000f) : "Value: " + integer + "ms"));
-        }).setDefaultValue(300).setSaveConsumer(i -> configObject.animate = i).build());
+        general.addEntry(eb.startIntSlider(new TranslatableText("config.field.animationTicks"), (int) configObject.animate, 0, 5000).setTextGetter(integer -> Text.of(integer <= 0 ? "Value: Disabled" : (integer > 1500 ? String.format("Value: %.1fs", integer / 1000f) : "Value: " + integer + "ms"))).setDefaultValue(300).setSaveConsumer(i -> configObject.animate = i).build());
         for (int i = 0; i < 8; i++) {
             ConfigCategory category = builder.getOrCreateCategory(new TranslatableText("config.category.category_" + i));
             ConfigObject.CategoryObject object = configObject.categories.get(i);
